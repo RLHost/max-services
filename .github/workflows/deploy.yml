@@ -18,6 +18,51 @@ jobs:
         run: npm install
       - name: 🏗️ Build project
         run: npm run build
+      - name: 📦 Prepare Deploy Payload
+        run: |
+          mkdir deploy-payload
+          cd dist
+          zip -r ../deploy-payload/deploy.zip .
+          cd ..
+          cat << 'EOF' > deploy-payload/unzip.php
+          <?php
+          $zipFile = 'deploy.zip';
+          if (!file_exists($zipFile)) { die("Error: deploy.zip not found."); }
+          
+          function deleteDir($dirPath) {
+              if (!is_dir($dirPath)) return;
+              if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') $dirPath .= '/';
+              $files = glob($dirPath . '*', GLOB_MARK);
+              foreach ($files as $file) {
+                  if (is_dir($file)) deleteDir($file);
+                  else unlink($file);
+              }
+              rmdir($dirPath);
+          }
+          
+          $dir = opendir('.');
+          while (($file = readdir($dir)) !== false) {
+              if ($file != '.' && $file != '..' && $file != 'deploy.zip' && $file != basename(__FILE__)) {
+                  if (is_dir($file)) deleteDir($file);
+                  else unlink($file);
+              }
+          }
+          closedir($dir);
+          
+          $zip = new ZipArchive;
+          if ($zip->open($zipFile) === TRUE) {
+              $zip->extractTo('.');
+              $zip->close();
+              echo "Deployment successful.\n";
+          } else {
+              die("Error: failed to extract.");
+          }
+          
+          unlink($zipFile);
+          unlink(basename(__FILE__));
+          ?>
+          EOF
+
       - name: 🚀 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -25,7 +70,16 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./dist/
+          local-dir: ./deploy-payload/
           server-dir: ./previa/max-services/
-          state-name: .ftp-deploy-sync-state.json
-          delete: true
+          delete: false
+
+      - name: 🔄 Execute Unzip Script
+        run: |
+          # Utilizando SITE_URL secret. Se não existir, avise no log.
+          if [ -z "${{ secrets.SITE_URL }}" ]; then
+            echo "Aviso: SITE_URL não definida, tentando URL hardcoded"
+            curl -s -S "https://www.rlhost.com.br/previa/max-services/unzip.php"
+          else
+            curl -s -S "${{ secrets.SITE_URL }}/previa/max-services/unzip.php"
+          fi

@@ -1,11 +1,13 @@
+import React, { Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { PainSection } from './components/PainSection';
-import { Services } from './components/Services';
-import { Authority } from './components/Authority';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { WhatsAppButton } from './components/WhatsAppButton';
+
+const PainSection = React.lazy(() => import('./components/PainSection').then(m => ({ default: m.PainSection })));
+const Services = React.lazy(() => import('./components/Services').then(m => ({ default: m.Services })));
+const Authority = React.lazy(() => import('./components/Authority').then(m => ({ default: m.Authority })));
+const Contact = React.lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
+const Footer = React.lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
+const WhatsAppButton = React.lazy(() => import('./components/WhatsAppButton').then(m => ({ default: m.WhatsAppButton })));
 
 function App() {
   return (
@@ -13,13 +15,17 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <PainSection />
-        <Services />
-        <Authority />
-        <Contact />
+        <Suspense fallback={<div className="py-20 text-center text-max-blue">Carregando conteúdo...</div>}>
+          <PainSection />
+          <Services />
+          <Authority />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
-      <WhatsAppButton />
+      <Suspense fallback={<div></div>}>
+        <Footer />
+        <WhatsAppButton />
+      </Suspense>
     </div>
   );
 }

@@ -4,9 +4,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <span className="text-2xl font-black tracking-tighter text-white block mb-4">
-              MAX<span className="text-max-royal">SERVICES</span>
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="Max Services Logo" 
+              className="h-10 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-sm leading-relaxed max-w-xs">
               Soluções corporativas completas em locação de veículos, máquinas, manutenção e facilities para empresas que não podem parar.
             </p>
