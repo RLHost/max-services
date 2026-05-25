@@ -137,13 +137,6 @@ export function Navbar() {
             >
               Contato
             </button>
-
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-max-orange hover:bg-orange-600 text-white px-6 py-2 rounded-sm font-bold uppercase text-sm transition-all transform hover:scale-105 shadow-lg"
-            >
-              Portal do Cliente
-            </button>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -213,13 +206,6 @@ export function Navbar() {
                 className="block w-full text-left px-3 py-3 text-max-blue font-bold uppercase hover:bg-gray-50"
               >
                 Contato
-              </button>
-
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="w-full mt-4 bg-max-orange text-white px-3 py-4 rounded-sm font-bold uppercase text-center"
-              >
-                Portal do Cliente
               </button>
             </div>
           </motion.div>
