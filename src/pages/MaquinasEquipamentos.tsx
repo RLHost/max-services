@@ -6,7 +6,7 @@ export function MaquinasEquipamentos() {
       {/* Hero Header */}
       <section className="bg-max-blue text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-slate-900">
-          <img src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Máquinas Pesadas" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/maquinas_fundo.jpg" alt="Máquinas Pesadas" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,7 +23,7 @@ export function MaquinasEquipamentos() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="order-2 lg:order-1">
-              <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Trator em operação" className="rounded-sm shadow-2xl border-4 border-white" />
+              <img src="/images/maquinas_operacao.jpg" alt="Trator em operação" className="rounded-sm shadow-2xl border-4 border-white" />
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl font-black uppercase mb-6 text-max-blue">Produtividade Sem Interrupções</h2>

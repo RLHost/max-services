@@ -6,7 +6,7 @@ export function Manutencao() {
       {/* Hero Header */}
       <section className="bg-max-blue text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-slate-900">
-          <img src="https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Oficina Mecânica" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/manutencao_fundo.jpg" alt="Oficina Mecânica" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,7 +43,7 @@ export function Manutencao() {
               </ul>
             </div>
             <div>
-              <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&q=80&w=1000" alt="Mecânico analisando motor" className="rounded-sm shadow-2xl border-4 border-white" />
+              <img src="/images/manutencao_operacao.jpg" alt="Mecânico analisando motor" className="rounded-sm shadow-2xl border-4 border-white" />
             </div>
           </div>
 

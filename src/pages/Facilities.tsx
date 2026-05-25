@@ -6,7 +6,7 @@ export function Facilities() {
       {/* Hero Header */}
       <section className="bg-max-blue text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-slate-900">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" alt="Edifício Corporativo" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/facilities_fundo.jpg" alt="Edifício Corporativo" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,7 +23,7 @@ export function Facilities() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="order-2 lg:order-1">
-              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" alt="Equipe de Limpeza Comercial" className="rounded-sm shadow-2xl border-4 border-white" />
+              <img src="/images/facilities_operacao.jpg" alt="Equipe de Limpeza Comercial" className="rounded-sm shadow-2xl border-4 border-white" />
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl font-black uppercase mb-6 text-max-blue">Cuidamos do seu Espaço</h2>

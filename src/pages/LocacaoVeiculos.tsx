@@ -6,7 +6,7 @@ export function LocacaoVeiculos() {
       {/* Hero Header */}
       <section className="bg-max-blue text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-slate-900">
-          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=2000" alt="Frota de Veículos" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/veiculos_fundo.jpg" alt="Frota de Veículos" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,7 +43,7 @@ export function LocacaoVeiculos() {
               </ul>
             </div>
             <div>
-              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&q=80&w=1000" alt="Carros corporativos" className="rounded-sm shadow-2xl border-4 border-white" />
+              <img src="/images/veiculos_operacao.jpg" alt="Carros corporativos" className="rounded-sm shadow-2xl border-4 border-white" />
             </div>
           </div>
 
