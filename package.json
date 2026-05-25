@@ -14,7 +14,8 @@
     "lucide-react": "^0.344.0",
     "motion": "^11.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.15.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -29,10 +30,20 @@
   },
   "reactSnap": {
     "source": "dist",
+    "include": [
+      "/",
+      "/solucoes/locacao-veiculos",
+      "/solucoes/maquinas-equipamentos",
+      "/solucoes/manutencao",
+      "/solucoes/facilities"
+    ],
     "minifyHtml": {
       "collapseWhitespace": false,
       "removeComments": false
     },
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }

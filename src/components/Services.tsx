@@ -1,5 +1,6 @@
 import { Car, Tractor, Wrench, Building2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export function Services() {
   const services = [
@@ -7,25 +8,29 @@ export function Services() {
       icon: <Car size={40} />,
       title: "Locação de Veículos",
       desc: "Terceirização completa de frota leve e executiva. Opções com ou sem condutor, transporte rodoviário de cargas e gestão total de documentação e seguros.",
-      tags: ["Frota Leve", "Com/Sem Motorista", "Transporte Municipal"]
+      tags: ["Frota Leve", "Com/Sem Motorista", "Transporte Municipal"],
+      path: "/solucoes/locacao-veiculos"
     },
     {
       icon: <Tractor size={40} />,
       title: "Máquinas e Equipamentos",
       desc: "Locação de maquinário agrícola, comercial e industrial pesado sem operador. Garantimos equipamentos revisados para que sua obra ou lavoura não pare.",
-      tags: ["Linha Amarela", "Agrícola", "Industrial"]
+      tags: ["Linha Amarela", "Agrícola", "Industrial", "Com/Sem Motorista"],
+      path: "/solucoes/maquinas-equipamentos"
     },
     {
       icon: <Wrench size={40} />,
       title: "Manutenção Especializada",
       desc: "Oficina completa para manutenção mecânica, funilaria, pintura, lavagem e lubrificação de veículos automotores e maquinário pesado.",
-      tags: ["Preventiva", "Corretiva", "Funilaria"]
+      tags: ["Preventiva", "Corretiva", "Funilaria"],
+      path: "/solucoes/manutencao"
     },
     {
       icon: <Building2 size={40} />,
       title: "Facilities & Estruturas",
       desc: "Apoio operacional completo: locação de palcos, coberturas, obras de acabamento, limpeza predial e serviços combinados para edifícios corporativos.",
-      tags: ["Limpeza", "Estruturas Temporárias", "Apoio Predial"]
+      tags: ["Limpeza", "Estruturas Temporárias", "Apoio Predial"],
+      path: "/solucoes/facilities"
     }
   ];
 
@@ -63,13 +68,16 @@ export function Services() {
                   <p className="text-gray-400 group-hover:text-max-slate mb-6 leading-relaxed">
                     {service.desc}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {service.tags.map((tag, i) => (
                       <span key={i} className="text-xs font-bold uppercase tracking-wider bg-white/10 group-hover:bg-max-ice group-hover:text-max-royal px-3 py-1 rounded-sm">
                         {tag}
                       </span>
                     ))}
                   </div>
+                  <Link to={service.path} className="inline-block font-bold text-sm uppercase tracking-wider text-max-orange group-hover:text-max-royal hover:underline">
+                    Ver Detalhes &rarr;
+                  </Link>
                 </div>
               </div>
             </motion.div>
