@@ -36,7 +36,9 @@ export function Footer() {
         
         <div className="pt-8 border-t border-gray-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Max Services. Todos os direitos reservados.</p>
-          <p className="mt-2 md:mt-0">Desenvolvido para alta performance.</p>
+          <p className="mt-2 md:mt-0">
+            Desenvolvido para alta performance por <a href="https://relvidigital.com.br/" target="_blank" rel="noopener noreferrer" className="hover:text-max-orange transition-colors font-semibold">Relvi Digital</a>.
+          </p>
         </div>
       </div>
     </footer>
